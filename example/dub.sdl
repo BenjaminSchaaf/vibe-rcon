@@ -1,0 +1,9 @@
+name "vibe-rcon-example"
+description "Example for vibe.rcon"
+authors "Benjamin Schaaf"
+copyright "Copyright © 2017, Benjamin Schaaf"
+license "MIT"
+
+targetPath "build"
+
+dependency "vibe-rcon" version="~master" path="../"
