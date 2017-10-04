@@ -102,6 +102,10 @@ final class RCONClient {
         return response;
     }
 
+    void close() {
+        connection.close();
+    }
+
     private @property auto nextId() {
         rollingId += 1;
         return rollingId;
