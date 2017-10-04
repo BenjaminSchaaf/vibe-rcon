@@ -21,7 +21,7 @@ dependency "vibe-rcon" version="~>1.0"
 
 ## Usage
 
-` ``d
+```d
 import vibe.rcon;
 
 auto client = new RCONClient("119.15.96.156", 27041);
