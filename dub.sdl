@@ -6,4 +6,4 @@ license "MIT"
 
 targetPath "build"
 
-dependency "vibe-d:core" version="~>0.8.1"
+dependency "vibe-core" version="~>1.4.0"

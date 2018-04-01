@@ -5,6 +5,7 @@ import std.bitmanip;
 import std.exception;
 
 import vibe.core.net;
+import vibe.core.stream;
 
 struct RCONPacket {
     @safe:
@@ -20,7 +21,7 @@ struct RCONPacket {
     Type type;
     string message;
 
-    static RCONPacket read(InputStream stream) {
+    static RCONPacket read(S)(S stream) if (isInputStream!S) {
         ubyte[4] sizeBuffer;
         stream.read(sizeBuffer);
         auto size = littleEndianToNative!int(sizeBuffer);
@@ -101,7 +102,7 @@ struct RCONPacket {
             cast(ubyte[])[0x66, 0x6f, 0x6f, 0x00, 0x00, 0x00]);
     }
 
-    void write(OutputStream stream) {
+    void write(O)(O stream) if (isOutputStream!O) {
         stream.write(toBuffer());
     }
 
